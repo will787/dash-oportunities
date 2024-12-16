@@ -11,6 +11,3 @@ plotly
 nbformat
 selenium
 streamlit-extras
-
-"para baixar: pip install -r requirements.txt"
-"após isso tira essas strings aqui, ou antes de rodar o comando"
