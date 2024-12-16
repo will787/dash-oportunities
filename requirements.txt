@@ -1,0 +1,14 @@
+numpy
+pandas
+yfinance
+plotly
+matplotlib
+statsmodels
+scikit-learn
+seaborn
+requests
+plotly
+nbformat
+selenium
+streamlit-extras
+
