@@ -13,7 +13,7 @@ def build_sidebar():
     st.sidebar.write('Selecione uma ação ou várias ações')
     
     # Use the same path defined in search_action.py
-    ticker_list = pd.read_csv('/home/wvmwill/enviroment/dash-oportunities/tickers_ibra.csv', index_col=0)
+    ticker_list = pd.read_csv("/home/wvmwill/enviroment/dash-oportunitties/tickers_ibra.csv", index_col=0)
     tickers = st.sidebar.multiselect(label='Selecione as ações', options=ticker_list)
     tickers = [t+'.SA' for t in tickers]
     
@@ -49,9 +49,9 @@ def build_main(tickers, prices):
         colA, colB, colC = c.columns(3)
         
         if t == 'portfolio':
-            colA.image('/home/wvmwill/enviroment/dash-oportunities/image-portfolio.jpg', width=85)
+            colA.image('image-portfolio.jpg', width=85)
         elif t == "IBOV":
-            colA.image('/home/wvmwill/enviroment/dash-oportunities/ibovespa.jpg', width=85)
+            colA.image('ibovespa.jpg', width=85)
         else:
             colA.image(f'https://raw.githubusercontent.com/thefintz/icones-b3/main/icones/{t}.png', width=85)
             
@@ -59,7 +59,7 @@ def build_main(tickers, prices):
         colC.metric(label='volatilidade', value=f'{vols[t]:.0%}')
         style_metric_cards(background_color='rgba(255,255,255,0)')
         
-        col1, col2 = st.columns(2, gap='large')
+        col1, col2 = st.columns(2, gap='large')l
         
     with col1:
         st.subheader("Desempenho relativo")
