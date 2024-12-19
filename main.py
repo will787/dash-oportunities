@@ -13,7 +13,7 @@ def build_sidebar():
     st.sidebar.write('Selecione uma ação ou várias ações')
     
     # Use the same path defined in search_action.py
-    ticker_list = pd.read_csv("/home/wvmwill/enviroment/dash-oportunitties/tickers_ibra.csv", index_col=0)
+    ticker_list = pd.read_csv("tickers_ibra.csv", index_col=0)
     tickers = st.sidebar.multiselect(label='Selecione as ações', options=ticker_list)
     tickers = [t+'.SA' for t in tickers]
     
@@ -59,7 +59,7 @@ def build_main(tickers, prices):
         colC.metric(label='volatilidade', value=f'{vols[t]:.0%}')
         style_metric_cards(background_color='rgba(255,255,255,0)')
         
-        col1, col2 = st.columns(2, gap='large')l
+        col1, col2 = st.columns(2, gap='large')
         
     with col1:
         st.subheader("Desempenho relativo")
