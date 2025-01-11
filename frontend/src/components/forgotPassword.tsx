@@ -1,45 +1,44 @@
-// src/pages/ForgotPassword.jsx
-import React from "react";
+// src/pages/ForgotPassword.tsx
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function ForgotPassword() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log("Enviando e-mail de recuperação...");
+  const [email, setEmail] = useState("");
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Recuperação de senha para:", email);
+    alert("Link de recuperação enviado!");
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-sm">
+    <div className="min-h-screen flex items-center justify-center">
+      <div className="bg-dark-card p-8 rounded shadow-md w-full max-w-sm">
         <h2 className="text-2xl font-bold text-center mb-6">Recuperar Senha</h2>
-        <p className="text-gray-600 text-center mb-4">
-          Digite seu e-mail para receber as instruções de recuperação de senha
-        </p>
-        <form className="flex flex-col space-y-4" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <div>
-            <label htmlFor="email" className="block mb-1 font-medium text-gray-700">
+            <label htmlFor="email" className="block mb-1 text-gray-400">
               E-mail
             </label>
             <input
               type="email"
               id="email"
-              name="email"
-              placeholder="Digite seu e-mail cadastrado"
-              className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-600 rounded bg-dark-secondary text-gray-200"
+              placeholder="Digite seu e-mail"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            className="w-full bg-dark-accent py-2 px-4 rounded text-white hover:bg-blue-700"
           >
-            Enviar Link de Recuperação
+            Enviar Link
           </button>
         </form>
-
-        {/* Link para voltar ao login */}
         <div className="mt-4 text-center">
-          <Link to="/" className="text-sm text-blue-500 hover:underline">
+          <Link to="/" className="text-dark-accent">
             Voltar ao login
           </Link>
         </div>

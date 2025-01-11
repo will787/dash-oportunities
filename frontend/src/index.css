@@ -1,3 +1,13 @@
+/* index.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Configurações globais */
+body {
+  @apply bg-dark-secondary text-dark-text font-sans; /* Fundo claro e texto preto */
+}
+
+a {
+  @apply text-dark-accent hover:underline; /* Links com cor de destaque */
+}
