@@ -1,10 +1,14 @@
-import React from 'react';
-import ReactDOM  from 'react-dom/client';
-import LoginScreen from './components/login';
-import "./index.css"
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import "./index.css"; // Se estiver usando Tailwind, suas importações (@tailwind base, etc.) estariam aqui
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <LoginScreen />
-  </React.StrictMode>,
-)
+    {/* Envolvendo a aplicação com BrowserRouter */}
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>
+);
